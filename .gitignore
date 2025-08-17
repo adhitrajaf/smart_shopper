@@ -1,0 +1,24 @@
+# --- Secrets ---
+# Sangat penting untuk tidak mengunggah file ini ke GitHub
+.env
+
+# --- Virtual Environment ---
+# Folder ini berisi semua library yang Anda install dan spesifik untuk mesin Anda
+/smartshopper/
+/venv/
+/.venv/
+
+# --- Python & Jupyter Cache ---
+# File-file ini dibuat secara otomatis dan tidak perlu disimpan di repository
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# --- IDE & Editor Settings ---
+# Folder konfigurasi untuk editor kode seperti VS Code atau PyCharm
+.vscode/
+.idea/
+
+# --- Streamlit ---
+# Folder konfigurasi yang mungkin dibuat oleh Streamlit
+.streamlit/
