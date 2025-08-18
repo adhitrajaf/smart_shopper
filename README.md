@@ -73,6 +73,7 @@ Before running the main application, you must populate your MongoDB Atlas databa
 Open and run the Jupyter Notebook located at process/store_data.ipynb. This script will create sample collections, generate vector embeddings, and store everything in your cluster.
 
 4. Run the Application
+Before run the main website.py u should run jupyter notebook store_data.ipynb first to get data and connect to MongoDB
 Once the database is populated, you can start the Streamlit web application.
 
 Bash
