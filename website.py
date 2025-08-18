@@ -26,10 +26,8 @@ load_dotenv()
 def load_css():
     st.markdown("""
     <style>
-    /* Import Google Fonts */
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
     
-    /* Root variables for consistent theming */
     :root {
         --primary-color: #667eea;
         --secondary-color: #764ba2;
@@ -48,18 +46,15 @@ def load_css():
         --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
     }
     
-    /* Global font settings */
     html, body, [class*="css"] {
         font-family: 'Poppins', sans-serif !important;
     }
     
-    /* Main container styling */
     .main {
         padding: 1rem 2rem;
         background-color: var(--light-bg);
     }
     
-    /* Header styling with better contrast */
     .header-container {
         background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
         padding: 2.5rem 2rem;
@@ -87,76 +82,6 @@ def load_css():
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
     }
     
-    /* Chat container styling */
-    .chat-container {
-        background: var(--white);
-        border-radius: 15px;
-        padding: 1.5rem;
-        margin: 1rem 0;
-        box-shadow: var(--shadow);
-        border: 1px solid var(--border-color);
-    }
-    
-    /* Sidebar styling with improved contrast */
-    .sidebar-header {
-        background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-secondary) 100%);
-        padding: 1.5rem;
-        border-radius: 15px;
-        color: var(--white);
-        text-align: center;
-        margin-bottom: 1.5rem;
-        box-shadow: var(--shadow);
-        border: 2px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    .sidebar-header h3 {
-        color: var(--white) !important;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-    }
-    
-    .sidebar-header p {
-        color: var(--white) !important;
-        opacity: 0.95;
-        margin: 0;
-        font-weight: 400;
-    }
-    
-    /* Feature box with better visibility */
-    .feature-box {
-        background: var(--white);
-        border-left: 4px solid var(--primary-color);
-        padding: 1rem 1.2rem;
-        margin: 0.8rem 0;
-        border-radius: 8px;
-        box-shadow: var(--shadow);
-        color: var(--text-primary) !important;
-        font-weight: 500;
-        border: 1px solid var(--border-color);
-        transition: all 0.3s ease;
-    }
-    
-    .feature-box:hover {
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-lg);
-        border-left-color: var(--accent-color);
-    }
-    
-    /* Sample question styling */
-    .sample-question {
-        background: linear-gradient(135deg, #e3f2fd 0%, #f1f8ff 100%);
-        padding: 0.8rem 1rem;
-        margin: 0.5rem 0;
-        border-radius: 8px;
-        border-left: 4px solid var(--info-color);
-        color: var(--text-primary) !important;
-        font-weight: 500;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-        border: 1px solid rgba(23, 162, 184, 0.2);
-    }
-    
-    /* Status indicators with high contrast */
     .status-success {
         background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
         color: #155724 !important;
@@ -181,25 +106,49 @@ def load_css():
         border: 1px solid rgba(220, 53, 69, 0.2);
     }
     
-    /* Loading animation */
-    .loading-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 2rem;
-        background: var(--white);
+    .status-warning {
+        background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+        color: #856404 !important;
+        padding: 1rem;
         border-radius: 10px;
+        border-left: 4px solid var(--warning-color);
+        margin: 1rem 0;
+        font-weight: 600;
         box-shadow: var(--shadow);
+        border: 1px solid rgba(255, 193, 7, 0.2);
     }
     
-    .loading-text {
-        margin-left: 1rem;
-        font-style: italic;
-        color: var(--primary-color) !important;
+    .sidebar-header {
+        background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-secondary) 100%);
+        padding: 1.5rem;
+        border-radius: 15px;
+        color: var(--white);
+        text-align: center;
+        margin-bottom: 1.5rem;
+        box-shadow: var(--shadow);
+        border: 2px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .sidebar-header h3 {
+        color: var(--white) !important;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+    
+    .feature-box {
+        background: var(--white);
+        border-left: 4px solid var(--primary-color);
+        padding: 1rem 1.2rem;
+        margin: 0.8rem 0;
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+        color: var(--text-primary) !important;
         font-weight: 500;
+        border: 1px solid var(--border-color);
+        transition: all 0.3s ease;
     }
     
-    /* Button styling improvements */
     .stButton > button {
         background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
         color: var(--white) !important;
@@ -211,158 +160,10 @@ def load_css():
         transition: all 0.3s ease;
         font-family: 'Poppins', sans-serif !important;
     }
-    
-    .stButton > button:hover {
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-lg);
-        background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
-    }
-    
-    /* Sidebar button styling - improved visibility */
-    .element-container .stButton > button {
-        width: 100%;
-        text-align: left;
-        background: var(--white) !important;
-        color: var(--text-primary) !important;
-        border: 2px solid var(--border-color) !important;
-        font-size: 0.9rem !important;
-        font-weight: 500 !important;
-        padding: 0.75rem 1rem !important;
-        border-radius: 8px !important;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
-        transition: all 0.3s ease !important;
-        margin-bottom: 0.5rem !important;
-    }
-    
-    .element-container .stButton > button:hover {
-        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
-        color: var(--white) !important;
-        border-color: var(--primary-color) !important;
-        transform: translateY(-1px) !important;
-        box-shadow: 0 4px 8px rgba(102, 126, 234, 0.2) !important;
-    }
-    
-    .element-container .stButton > button:active {
-        transform: translateY(0) !important;
-        box-shadow: 0 2px 4px rgba(102, 126, 234, 0.3) !important;
-    }
-    
-    /* Sample question styling for better visibility */
-    .sample-question-button {
-        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%) !important;
-        color: var(--text-primary) !important;
-        border: 2px solid var(--primary-color) !important;
-        font-weight: 600 !important;
-        text-shadow: none !important;
-    }
-    
-    .sample-question-button:hover {
-        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
-        color: var(--white) !important;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2) !important;
-    }
-    
-    /* Chat message styling */
-    .stChatMessage {
-        background: var(--white);
-        border-radius: 10px;
-        box-shadow: var(--shadow);
-        border: 1px solid var(--border-color);
-    }
-    
-    /* Input styling */
-    .stTextInput > div > div > input {
-        border-radius: 10px;
-        border: 2px solid var(--border-color);
-        padding: 0.75rem;
-        font-family: 'Poppins', sans-serif !important;
-    }
-    
-    .stTextInput > div > div > input:focus {
-        border-color: var(--primary-color);
-        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-    }
-    
-    /* Spinner customization */
-    .stSpinner {
-        color: var(--primary-color) !important;
-    }
-    
-    /* Markdown content improvements */
-    .stMarkdown {
-        color: var(--text-primary) !important;
-    }
-    
-    .stMarkdown h1, .stMarkdown h2, .stMarkdown h3, .stMarkdown h4, .stMarkdown h5, .stMarkdown h6 {
-        color: var(--text-primary) !important;
-        font-weight: 600;
-    }
-    
-    /* Sidebar improvements */
-    .css-1d391kg {
-        background-color: var(--white);
-    }
-    
-    /* Override any default text colors */
-    .element-container, .stMarkdown, .stText {
-        color: var(--text-primary) !important;
-    }
-    
-    /* Ensure all text elements have proper contrast */
-    * {
-        color: inherit;
-    }
-    
-    /* Custom scrollbar */
-    ::-webkit-scrollbar {
-        width: 8px;
-    }
-    
-    ::-webkit-scrollbar-track {
-        background: var(--light-bg);
-    }
-    
-    ::-webkit-scrollbar-thumb {
-        background: var(--primary-color);
-        border-radius: 4px;
-    }
-    
-    ::-webkit-scrollbar-thumb:hover {
-        background: var(--secondary-color);
-    }
     </style>
     """, unsafe_allow_html=True)
 
-# Enhanced Templates
-METADATA_FILTER_TEMPLATE = """
-You are an expert assistant that helps create metadata filters for product searches. 
-Based on the user input, create a JSON filter object that can be used to filter products.
-
-Available materials: {{materials}}
-Available categories: {{categories}}
-
-The filter should follow this structure:
-```json
-{
-    "material": ["material1", "material2"],  // Only if user mentions specific materials
-    "category": ["category1", "category2"],  // Only if user mentions specific categories
-    "price": {"$gte": min_price, "$lte": max_price}  // Only if user mentions price range
-}
-```
-
-Rules:
-1. Only include filters that are explicitly mentioned or strongly implied in the user input
-2. For materials and categories, use exact matches from the available lists
-3. For price, extract numerical values and create range filters
-4. If no specific filters are mentioned, return an empty JSON object: {}
-5. Always return valid JSON wrapped in ```json``` code blocks
-
-User input: {{input}}
-
-Filter:
-"""
-
-# Enhanced Components with proper decorators
+# Enhanced Components with better error handling
 @component
 class GroqChatGenerator:
     def __init__(self, model: str = "llama-3.3-70b-versatile", api_key: str = None):
@@ -372,7 +173,7 @@ class GroqChatGenerator:
     @component.output_types(replies=List[ChatMessage])
     def run(self, messages: List[ChatMessage], tools: List = None):
         if not messages:
-            raise ValueError("The 'messages' list received by GroqChatGenerator is empty.")
+            return {"replies": [ChatMessage.from_assistant("Hello! How can I help you today?")]}
             
         groq_messages = []
         for msg in messages:
@@ -394,10 +195,10 @@ class GroqChatGenerator:
                 ]
             }
         except Exception as e:
-            st.error(f"Error with Groq API: {e}")
+            st.error(f"Groq API Error: {e}")
             return {
                 "replies": [
-                    ChatMessage.from_assistant("I apologize, but I'm experiencing technical difficulties. Please try again.")
+                    ChatMessage.from_assistant("I'm experiencing technical difficulties. Please try again.")
                 ]
             }
 
@@ -410,7 +211,7 @@ class GroqGenerator:
     @component.output_types(replies=List[str])
     def run(self, prompt: str):
         if not prompt:
-            raise ValueError("The 'prompt' received by GroqGenerator is empty.")
+            return {"replies": ["{}"]}
             
         try:
             response = self.client.chat.completions.create(
@@ -424,51 +225,119 @@ class GroqGenerator:
                 "replies": [response.choices[0].message.content]
             }
         except Exception as e:
-            st.error(f"Error with Groq API: {e}")
-            return {
-                "replies": ["Error processing request. Please try again."]
-            }
+            st.error(f"Groq API Error: {e}")
+            return {"replies": ["{}"]}
 
-class MongoDBAtlas:
-    def __init__(self, mongo_connection_string: str):
-        self.client = MongoClient(mongo_connection_string)
-        self.db = self.client.smartshopper_store
-        self.material_collection = self.db.materials
-        self.category_collection = self.db.categories
+class MongoDBConnectionManager:
+    """Singleton connection manager with proper timeout and retry logic"""
+    _instance = None
+    _client = None
+    
+    def __new__(cls, connection_string: str):
+        if cls._instance is None:
+            cls._instance = super().__new__(cls)
+        return cls._instance
+    
+    def __init__(self, connection_string: str):
+        if self._client is None:
+            try:
+                # Connection with proper timeout settings
+                self._client = MongoClient(
+                    connection_string,
+                    serverSelectionTimeoutMS=5000,  # 5 seconds timeout
+                    connectTimeoutMS=5000,
+                    socketTimeoutMS=5000,
+                    maxPoolSize=10,
+                    retryWrites=True
+                )
+                # Test connection
+                self._client.admin.command('ping')
+            except Exception as e:
+                st.error(f"MongoDB connection failed: {e}")
+                self._client = None
+    
+    def get_client(self):
+        return self._client
+    
+    def get_database(self, db_name: str):
+        if self._client:
+            return self._client[db_name]
+        return None
 
-    def get_materials(self):
-        try:
-            return [doc['name'] for doc in self.material_collection.find()]
-        except Exception as e:
-            st.error(f"Error fetching materials: {e}")
-            return []
-
-    def get_categories(self):
-        try:
-            return [doc['name'] for doc in self.category_collection.find()]
-        except Exception as e:
-            st.error(f"Error fetching categories: {e}")
-            return []
-
-@component
+@component  
 class GetMaterials:
     def __init__(self):
-        self.db = MongoDBAtlas(os.environ['MONGO_CONNECTION_STRING'])
-    
+        self.connection_string = os.environ.get('MONGO_CONNECTION_STRING')
+        
     @component.output_types(materials=List[str])
     def run(self):
-        materials = self.db.get_materials()
-        return {"materials": materials}
+        if not self.connection_string:
+            st.error("MongoDB connection string not found")
+            return {"materials": ["Cotton", "Polyester", "Wool", "Leather"]}  # Fallback
+        
+        try:
+            manager = MongoDBConnectionManager(self.connection_string)
+            db = manager.get_database("smartshopper_store")
+            if db is None:
+                raise Exception("Database connection failed")
+                
+            materials = [doc['name'] for doc in db.materials.find().limit(100)]
+            return {"materials": materials if materials else ["Cotton", "Polyester", "Wool", "Leather"]}
+        except Exception as e:
+            st.warning(f"Using fallback materials due to: {e}")
+            return {"materials": ["Cotton", "Polyester", "Wool", "Leather", "Silk", "Denim"]}
 
 @component
 class GetCategories:
     def __init__(self):
-        self.db = MongoDBAtlas(os.environ['MONGO_CONNECTION_STRING'])
-    
+        self.connection_string = os.environ.get('MONGO_CONNECTION_STRING')
+        
     @component.output_types(categories=List[str])
     def run(self):
-        categories = self.db.get_categories()
-        return {"categories": categories}
+        if not self.connection_string:
+            st.error("MongoDB connection string not found")
+            return {"categories": ["Clothing", "Electronics", "Home", "Sports"]}  # Fallback
+        
+        try:
+            manager = MongoDBConnectionManager(self.connection_string)
+            db = manager.get_database("smartshopper_store")
+            if db is None:
+                raise Exception("Database connection failed")
+                
+            categories = [doc['name'] for doc in db.categories.find().limit(100)]
+            return {"categories": categories if categories else ["Clothing", "Electronics", "Home", "Sports"]}
+        except Exception as e:
+            st.warning(f"Using fallback categories due to: {e}")
+            return {"categories": ["Clothing", "Electronics", "Home", "Sports", "Beauty", "Books"]}
+
+# Enhanced Templates
+METADATA_FILTER_TEMPLATE = """
+You are an expert assistant that helps create metadata filters for product searches. 
+Based on the user input, create a JSON filter object that can be used to filter products.
+
+Available materials: {{materials}}
+Available categories: {{categories}}
+
+The filter should follow this structure:
+```json
+{
+    "material": ["material1", "material2"],
+    "category": ["category1", "category2"],
+    "price": {"$gte": min_price, "$lte": max_price}
+}
+```
+
+Rules:
+1. Only include filters that are explicitly mentioned or strongly implied in the user input
+2. For materials and categories, use exact matches from the available lists
+3. For price, extract numerical values and create range filters
+4. If no specific filters are mentioned, return an empty JSON object: {}
+5. Always return valid JSON wrapped in ```json``` code blocks
+
+User input: {{input}}
+
+Filter:
+"""
 
 class ParaphraserPipeline:
     def __init__(self, chat_message_store):
@@ -508,7 +377,7 @@ class ParaphraserPipeline:
             )
             return res["generator"]["replies"][0].text
         except Exception as e:
-            st.error(f"Error in paraphraser: {e}")
+            st.warning(f"Paraphraser error, using original query: {e}")
             return query
 
 class MetaDataFilterPipeline:
@@ -531,7 +400,7 @@ class MetaDataFilterPipeline:
             res = self.pipeline.run({"prompt_builder": {"input": query}})
             return res["generator"]["replies"][0]
         except Exception as e:
-            st.error(f"Error in metadata filter: {e}")
+            st.warning(f"Filter generation error, using empty filter: {e}")
             return "{}"
 
 class RetrieveAndGenerateAnswerPipeline:
@@ -565,7 +434,7 @@ class RetrieveAndGenerateAnswerPipeline:
                 **{{loop.index}}. {{ product.meta.title }}**
                 💰 **Price:** Rp {{ "{:,}".format(product.meta.price) }}
                 🧵 **Material:** {{ product.meta.material }}
-                📁 **Category:** {{ product.meta.category }}
+                📂 **Category:** {{ product.meta.category }}
                 🏷️ **Brand:** {{ product.meta.brand }}
                 ⭐ **Why recommended:** {{ product.content[:100] }}...
 
@@ -589,8 +458,8 @@ class RetrieveAndGenerateAnswerPipeline:
             
             return res["generator"]["replies"][0].text
         except Exception as e:
-            st.error(f"Error in product retrieval: {e}")
-            return "I apologize, but I'm having trouble retrieving products right now. Please try again."
+            st.error(f"Product retrieval error: {e}")
+            return "I apologize, but I'm having trouble retrieving products right now. Please try again or contact support."
 
     def normalize_filter_format(self, filter_dict):
         """Convert simple filter format to Haystack filter format"""
@@ -669,7 +538,7 @@ class CommonInfoPipeline:
 
                 **User Question:** {{query}}
 
-                Please provide a comprehensive, friendly, and professional answer with clear formatting.
+                Please provide a comprehensive, friendly, and professional answer.
                 """)
         ]
         
@@ -681,48 +550,47 @@ class CommonInfoPipeline:
             
             return res["generator"]["replies"][0].text
         except Exception as e:
-            st.error(f"Error in info retrieval: {e}")
+            st.error(f"Info retrieval error: {e}")
             return "I apologize, but I'm having trouble accessing information right now. Please contact our support team."
 
-# Tool Functions
+# Tool Functions with better error handling
 def retrieve_and_generate(query: Annotated[str, "User query for product recommendations"], 
                          paraphraser, metadata_filter, rag_pipeline):
-    """Tool for product recommendations with enhanced error handling"""
+    """Tool for product recommendations"""
     try:
-        with st.spinner("🔍 Searching for products..."):
-            paraphrased_query = paraphraser.run(query)
-            filter_result = metadata_filter.run(paraphrased_query)
-            
+        paraphrased_query = paraphraser.run(query)
+        filter_result = metadata_filter.run(paraphrased_query)
+        
+        filter_dict = {}
+        try:
+            json_match = re.search(r'```json\n(.*?)\n```', filter_result, re.DOTALL)
+            if json_match:
+                json_str = json_match.group(1)
+                filter_dict = json.loads(json_str)
+        except:
             filter_dict = {}
-            try:
-                json_match = re.search(r'```json\n(.*?)\n```', filter_result, re.DOTALL)
-                if json_match:
-                    json_str = json_match.group(1)
-                    filter_dict = json.loads(json_str)
-            except Exception as e:
-                filter_dict = {}
-            
-            result = rag_pipeline.run(paraphrased_query, filter_dict)
-            return result
-            
+        
+        result = rag_pipeline.run(paraphrased_query, filter_dict)
+        return result
+        
     except Exception as e:
-        st.error(f"Error generating recommendations: {e}")
-        return "I apologize, but I'm having trouble generating recommendations right now. Please try again."
+        return f"I apologize, but I'm having trouble generating recommendations right now. Error: {e}"
 
 def get_common_information(query: Annotated[str, "User query about shopping information"], 
                           common_info_pipeline):
     """Tool for common shopping information"""
     try:
-        with st.spinner("📋 Retrieving information..."):
-            result = common_info_pipeline.run(query)
-            return result
+        result = common_info_pipeline.run(query)
+        return result
     except Exception as e:
-        st.error(f"Error retrieving information: {e}")
-        return "I apologize, but I'm having trouble accessing information right now. Please try again."
+        return f"I apologize, but I'm having trouble accessing information right now. Error: {e}"
 
 def response_handler(query):
-    """Enhanced response handler with better error handling"""
+    """Enhanced response handler"""
     try:
+        if not hasattr(st.session_state, 'agent'):
+            return "System not properly initialized. Please refresh the page."
+            
         st.session_state.chat_message_writer.run([ChatMessage.from_user(query)])
         history_messages = list(st.session_state.chat_message_store.messages)
         response = st.session_state.agent.run(messages=history_messages + [ChatMessage.from_user(query)])
@@ -731,12 +599,48 @@ def response_handler(query):
         return response_text
         
     except Exception as e:
-        st.error(f"Error processing request: {e}")
-        return "I apologize, but I encountered an error while processing your request. Please try again or contact support."
+        st.error(f"Response handler error: {e}")
+        return "I apologize, but I encountered an error. Please try again."
+
+def test_connections():
+    """Test all required connections"""
+    errors = []
+    
+    # Test Groq API
+    try:
+        if not os.environ.get("GROQ_API_KEY"):
+            errors.append("GROQ_API_KEY not found in environment variables")
+        else:
+            client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
+            client.chat.completions.create(
+                model="llama-3.3-70b-versatile",
+                messages=[{"role": "user", "content": "test"}],
+                max_tokens=10
+            )
+    except Exception as e:
+        errors.append(f"Groq API connection failed: {e}")
+    
+    # Test MongoDB connection
+    try:
+        if not os.environ.get("MONGO_CONNECTION_STRING"):
+            errors.append("MONGO_CONNECTION_STRING not found in environment variables")
+        else:
+            manager = MongoDBConnectionManager(os.environ.get("MONGO_CONNECTION_STRING"))
+            if manager.get_client() is None:
+                errors.append("MongoDB connection failed")
+    except Exception as e:
+        errors.append(f"MongoDB connection error: {e}")
+    
+    return errors
 
 @st.cache_resource
 def initialize_document_stores():
-    """Initialize document stores with caching"""
+    """Initialize document stores with better error handling"""
+    connection_string = os.environ.get('MONGO_CONNECTION_STRING')
+    if not connection_string:
+        st.error("MongoDB connection string not found in environment variables")
+        return None, None
+    
     try:
         products_store = MongoDBAtlasDocumentStore(
             database_name="smartshopper_store",
@@ -747,14 +651,14 @@ def initialize_document_stores():
         
         common_info_store = MongoDBAtlasDocumentStore(
             database_name="smartshopper_store",
-            collection_name="common_info",
+            collection_name="common_info", 
             vector_search_index="common_info_vector_index",
             full_text_search_index="common_info_search_index",
         )
         
         return products_store, common_info_store
     except Exception as e:
-        st.error(f"Error initializing document stores: {e}")
+        st.error(f"Document store initialization failed: {e}")
         return None, None
 
 def main():
@@ -769,7 +673,7 @@ def main():
     # Load custom CSS
     load_css()
     
-    # Header with improved styling
+    # Header
     st.markdown("""
     <div class="header-container">
         <div class="header-title">🛍️ SmartShopper Assistant</div>
@@ -777,40 +681,223 @@ def main():
     </div>
     """, unsafe_allow_html=True)
 
+    # Test connections first
+    if 'connection_tested' not in st.session_state:
+        with st.spinner("🔍 Testing system connections..."):
+            connection_errors = test_connections()
+            if connection_errors:
+                st.markdown("""
+                <div class="status-error">
+                    ❌ <strong>Connection Issues Detected:</strong><br>
+                    """ + "<br>".join(f"• {error}" for error in connection_errors) + """
+                </div>
+                """, unsafe_allow_html=True)
+                
+                st.markdown("""
+                <div class="status-warning">
+                    ⚠️ <strong>To fix these issues:</strong><br>
+                    • Check your .env file contains GROQ_API_KEY and MONGO_CONNECTION_STRING<br>
+                    • Verify your MongoDB Atlas cluster is running and accessible<br>
+                    • Check your internet connection<br>
+                    • Ensure MongoDB Atlas IP whitelist includes your current IP
+                </div>
+                """, unsafe_allow_html=True)
+                
+                if st.button("🔄 Retry Connection"):
+                    del st.session_state.connection_tested
+                    st.rerun()
+                return
+            else:
+                st.session_state.connection_tested = True
+                st.markdown("""
+                <div class="status-success">
+                    ✅ All connections successful!
+                </div>
+                """, unsafe_allow_html=True)
+
     # Initialize document stores
     if 'document_stores_initialized' not in st.session_state:
-        with st.spinner("🔧 Initializing system components..."):
+        with st.spinner("📊 Initializing document stores..."):
             products_store, common_info_store = initialize_document_stores()
             if products_store and common_info_store:
                 st.session_state.products_document_store = products_store
                 st.session_state.common_info_document_store = common_info_store
                 st.session_state.document_stores_initialized = True
-                
-                # Success message with proper styling
-                st.markdown("""
-                <div class="status-success">
-                    ✅ System initialized successfully!
-                </div>
-                """, unsafe_allow_html=True)
             else:
-                # Error message with proper styling
                 st.markdown("""
                 <div class="status-error">
-                    ❌ Failed to initialize system. Please check your configuration.
+                    ❌ Failed to initialize document stores. Please check your MongoDB configuration.
                 </div>
                 """, unsafe_allow_html=True)
                 return
 
-    # Initialize session state components
+    # Initialize chat components
     if 'chat_message_store' not in st.session_state:
         st.session_state.chat_message_store = InMemoryChatMessageStore()
     
     if 'chat_message_writer' not in st.session_state:
         st.session_state.chat_message_writer = ChatMessageWriter(st.session_state.chat_message_store)
     
+    # Initialize pipelines
     if 'pipelines_initialized' not in st.session_state:
         with st.spinner("🔧 Setting up AI pipelines..."):
             try:
-                # Initialize pipelines
                 st.session_state.paraphraser_pipeline = ParaphraserPipeline(st.session_state.chat_message_store)
                 st.session_state.metadata_filter_pipeline = MetaDataFilterPipeline(METADATA_FILTER_TEMPLATE)
+                st.session_state.rag_pipeline = RetrieveAndGenerateAnswerPipeline(
+                    st.session_state.chat_message_store, 
+                    st.session_state.products_document_store
+                )
+                st.session_state.common_info_pipeline = CommonInfoPipeline(st.session_state.common_info_document_store)
+
+                # Initialize agent with tools
+                retrieval_tool = Tool(
+                    name="retrieve_and_generate",
+                    description="Use this tool to search and recommend products based on user queries about shopping, products, or recommendations.",
+                    parameters={
+                        "type": "object",
+                        "properties": {"query": {"type": "string"}},
+                        "required": ["query"]
+                    },
+                    function=partial(
+                        retrieve_and_generate,
+                        paraphraser=st.session_state.paraphraser_pipeline,
+                        metadata_filter=st.session_state.metadata_filter_pipeline,
+                        rag_pipeline=st.session_state.rag_pipeline
+                    )
+                )
+
+                common_info_tool = Tool(
+                    name="get_common_information", 
+                    description="Use this tool for general shopping information, policies, FAQs, and common questions that don't require specific product searches.",
+                    parameters={
+                        "type": "object",
+                        "properties": {"query": {"type": "string"}},
+                        "required": ["query"]
+                    },
+                    function=partial(
+                        get_common_information,
+                        common_info_pipeline=st.session_state.common_info_pipeline
+                    )
+                )
+
+                st.session_state.agent = Agent(
+                    chat_generator=GroqChatGenerator(),
+                    tools=[retrieval_tool, common_info_tool]
+                )
+
+                st.session_state.pipelines_initialized = True
+                
+                st.markdown("""
+                <div class="status-success">
+                    ✅ AI pipelines initialized successfully!
+                </div>
+                """, unsafe_allow_html=True)
+                
+            except Exception as e:
+                st.markdown(f"""
+                <div class="status-error">
+                    ❌ Failed to initialize AI pipelines: {str(e)}
+                </div>
+                """, unsafe_allow_html=True)
+                return
+
+    # Sidebar
+    with st.sidebar:
+        st.markdown("""
+        <div class="sidebar-header">
+            <h3>💡 Features</h3>
+            <p>Explore what I can help you with</p>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        features = [
+            "🔍 Product Search & Recommendations",
+            "💰 Price Comparisons", 
+            "📊 Category Filtering",
+            "🏷️ Brand Information",
+            "❓ Shopping Assistance"
+        ]
+        
+        for feature in features:
+            st.markdown(f'<div class="feature-box">{feature}</div>', unsafe_allow_html=True)
+        
+        st.markdown("---")
+        
+        # Sample questions
+        st.markdown("### 🔍 Try these examples:")
+        
+        sample_questions = [
+            "Show me winter jackets under 500k",
+            "What are the best running shoes?", 
+            "I need a laptop for gaming",
+            "Cotton shirts for office wear",
+            "What's your return policy?",
+            "How do I track my order?",
+            "Do you offer warranties?",
+            "What payment methods do you accept?"
+        ]
+        
+        for question in sample_questions:
+            if st.button(question, key=f"sample_{question}", use_container_width=True):
+                st.session_state.sample_query = question
+
+        # Clear chat button
+        st.markdown("---")
+        if st.button("🗑️ Clear Chat History", use_container_width=True):
+            if hasattr(st.session_state, 'chat_message_store'):
+                st.session_state.chat_message_store.messages.clear()
+                st.rerun()
+
+    # Main chat interface
+    st.markdown("### 💬 Chat with SmartShopper Assistant")
+    
+    # Display chat messages
+    if hasattr(st.session_state, 'chat_message_store'):
+        for message in st.session_state.chat_message_store.messages:
+            role = "user" if message.role.value == "user" else "assistant"
+            with st.chat_message(role):
+                st.markdown(message.text)
+
+    # Handle sample query
+    if hasattr(st.session_state, 'sample_query'):
+        query = st.session_state.sample_query
+        del st.session_state.sample_query
+        
+        with st.chat_message("user"):
+            st.markdown(query)
+        
+        with st.chat_message("assistant"):
+            with st.spinner("🤔 Thinking..."):
+                if hasattr(st.session_state, 'agent'):
+                    response = response_handler(query)
+                    st.markdown(response)
+                else:
+                    st.error("System not properly initialized. Please refresh the page.")
+
+    # Chat input
+    if prompt := st.chat_input("What can I help you find today? 🛍️"):
+        # Display user message
+        with st.chat_message("user"):
+            st.markdown(prompt)
+        
+        # Generate and display assistant response
+        with st.chat_message("assistant"):
+            with st.spinner("🤔 Thinking..."):
+                if hasattr(st.session_state, 'agent'):
+                    response = response_handler(prompt)
+                    st.markdown(response)
+                else:
+                    st.error("System not properly initialized. Please refresh the page.")
+
+    # Footer
+    st.markdown("---")
+    st.markdown("""
+    <div style="text-align: center; padding: 2rem; color: var(--text-secondary);">
+        <p>🛍️ <strong>SmartShopper Assistant</strong> - Powered by AI | 
+        Need help? Contact our support team!</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+if __name__ == "__main__":
+    main()
